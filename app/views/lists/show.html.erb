@@ -1,0 +1,32 @@
+<div style="background-image: url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-size: cover;
+    background-position: center;
+    width: 100% ;
+    height: 500px ;" class="flex flex-col justify-center items-center">
+  <p class="title-1"><%= @list.name %></p>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie%>
+    <%= f.submit "Add a bookmark", class:"" %>
+    <% end %>
+</div>
+
+<div class="container">
+  <% if @bookmarks.empty? %>
+    <p class="text-3xl text-white text-center">Désolé, cette liste est actuellement vide</p>
+    <% else %>
+  <div class="grid gap-4 grid-cols-3">
+      <% @bookmarks.each do |bookmark| %>
+        <div class="card-film">
+          <figure class="px-10 pt-10">
+            <img src="<%= bookmark.movie.poster_url %>" alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="items-center text-center">
+            <h2 class=""><%= bookmark.movie.title %></h2>
+            <p><%= bookmark.movie.overview %></p>
+            <%= link_to "Remove from this list", bookmark_path(bookmark.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class: "btn btn-primary"  %>
+          </div>
+        </div>
+        <% end %>
+  </div>
+  <% end %>
+</div>
