@@ -18,17 +18,17 @@ puts "#{Movie.count} movies created"
 
 
 action = List.create( name: "Action")
-horreur = List.create( name: "Horreur")
-comedie = List.create( name: "Comédie")
-scifi = List.create( name: "Sci-FI")
+horror = List.create( name: "Horror")
+comedy = List.create( name: "Comedy")
+scifi = List.create( name: "Sci-Fi")
 
 puts "#{List.count} lists created"
 
 Bookmark.create!( comment: "Incredible 1", movie_id: wonder.id, list_id: action.id)
 Bookmark.create( comment: "Incredible 2", movie_id: ocean.id, list_id: action.id)
-Bookmark.create( comment: "Incredible 3", movie_id: shawshank.id, list_id: horreur.id)
-Bookmark.create( comment: "Incredible 4", movie_id: titanic.id, list_id: horreur.id)
+Bookmark.create( comment: "Incredible 3", movie_id: shawshank.id, list_id: horror.id)
+Bookmark.create( comment: "Incredible 4", movie_id: titanic.id, list_id: horror.id)
 Bookmark.create( comment: "Incredible 5", movie_id: titanic.id, list_id: scifi.id)
-Bookmark.create( comment: "Incredible 6", movie_id: wonder.id, list_id: comedie.id)
+Bookmark.create( comment: "Incredible 6", movie_id: wonder.id, list_id: comedy.id)
 
 puts "#{Bookmark.count} bookmarks created"
