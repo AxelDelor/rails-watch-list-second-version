@@ -10,3 +10,61 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+
+body {
+  background-color: black;
+}
+
+.title-1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+  font-weight: bold;
+}
+
+.container {
+  width: 1200px;
+  margin: 25px auto;
+}
+
+.card-film {
+  background-color: whitesmoke;
+  border-radius: 36px;
+}
+
+.banner-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-card-genre {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.card-genre {
+  background-color: whitesmoke;
+  border-radius: 36px;
+  padding: 36px;
+  margin: 16px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+p{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+label {
+  background-color: whitesmoke;
+  padding: 4px;
+}
