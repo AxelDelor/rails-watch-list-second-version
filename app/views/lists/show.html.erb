@@ -14,18 +14,18 @@
 
 <div class="container">
   <% if @bookmarks.empty? %>
-    <p class="text-3xl text-white text-center">Désolé, cette liste est actuellement vide</p>
+    <p class="h2 text-white text-center">Désolé, cette liste est actuellement vide</p>
     <% else %>
-  <div class="grid gap-4 grid-cols-3">
+  <div class="container-card">
       <% @bookmarks.each do |bookmark| %>
         <div class="card-film">
-          <figure class="px-10 pt-10">
-            <img src="<%= bookmark.movie.poster_url %>" alt="Shoes" class="rounded-xl" />
-          </figure>
-          <div class="items-center text-center">
-            <h2 class=""><%= bookmark.movie.title %></h2>
+          <div>
+            <img src="<%= bookmark.movie.poster_url %>" alt="The movie posters"/>
+            <h2 class="text-center"><%= bookmark.movie.title %></h2>
+          </div>
+          <div class="text-center">
             <p><%= bookmark.movie.overview %></p>
-            <%= link_to "Remove from this list", bookmark_path(bookmark.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class: "btn btn-primary"  %>
+            <%= link_to "Remove from this list", bookmark_path(bookmark.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class: "btn btn-primary" %>
           </div>
         </div>
         <% end %>

@@ -17,6 +17,10 @@ body {
   background-color: black;
 }
 
+.container {
+  width: 1200px;
+  margin: 25px auto;
+}
 .title-1 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 100px;
@@ -24,14 +28,14 @@ body {
   font-weight: bold;
 }
 
-.container {
-  width: 1200px;
-  margin: 25px auto;
+p, h1, h2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.card-film {
-  background-color: whitesmoke;
-  border-radius: 36px;
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
 .banner-main {
@@ -41,9 +45,10 @@ body {
   align-items: center;
 }
 
-.container-card-genre {
+.container-card {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 350px 350px 350px;
+  justify-content: center;
 }
 
 .card-genre {
@@ -54,17 +59,19 @@ body {
   text-align: center;
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: black;
-}
-
-p{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-label {
+.card-film {
   background-color: whitesmoke;
-  padding: 4px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  margin: 16px;
+  justify-content: space-between;
+}
+
+.container-card img {
+  width: 300px;
+  border-radius: 8px;
 }
